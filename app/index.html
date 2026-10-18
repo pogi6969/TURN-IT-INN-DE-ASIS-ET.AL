@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Turn In Out App</title>
+<meta name="description" content="Similarity, plagiarism and AI writing checks with downloadable reports.">
+<meta name="theme-color" content="#5B2BD6">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Turn In Out">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../favicon.ico" sizes="48x48">
+<link rel="icon" href="../assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="app">
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="../assets/icons/logo.svg" alt="" width="30" height="30">Turn In Out</a>
+    <nav class="nav" aria-label="Main"><a href="../">Website</a></nav>
+  </div>
+</header>
+<main class="app-main">
+  <div class="wrap">
+    <div class="install-banner" id="install-banner">
+      <span>Install Turn In Out to keep it on your home screen and open it offline.</span>
+      <button class="btn primary" id="install-btn" type="button">Install</button>
+    </div>
+    <div id="scanner"></div>
+  </div>
+</main>
+<script src="../assets/vendor/pdf.min.js"></script>
+<script src="../assets/vendor/pdf-lib.min.js"></script>
+<script src="../assets/vendor/fontkit.umd.min.js"></script>
+<script src="../assets/vendor/mammoth.browser.min.js"></script>
+<script src="../assets/js/wordfreq.js"></script>
+<script src="../assets/js/text.js"></script>
+<script src="../assets/js/extract.js"></script>
+<script src="../assets/js/ai.js"></script>
+<script src="../assets/js/similarity.js"></script>
+<script src="../assets/js/sources.js"></script>
+<script src="../assets/js/report.js"></script>
+<script src="../assets/js/ui.js"></script>
+<script src="../assets/js/boot.js"></script>
+<script>VT.boot({ base: "../", mount: "scanner" });</script>
+</body>
+</html>

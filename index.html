@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Turn In Out</title>
+<meta name="description" content="Check papers for similarity, plagiarism and AI writing, and download a Similarity Report and an AI Writing Report for every document.">
+<meta name="theme-color" content="#5B2BD6">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="48x48">
+<link rel="icon" href="assets/icons/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#scan">Skip to the scanner</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/icons/logo.svg" alt="" width="30" height="30">Turn In Out</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#scan">Scan</a>
+      <a href="#how">How it works</a>
+      <a href="#reports">Reports</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+      <a class="cta" href="app/">Open the app</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Similarity · Plagiarism · AI writing</p>
+        <h1>Check a paper and get the full integrity report.</h1>
+        <p class="lead">Upload a PDF or Word file. Turn In Out compares it with the web, scholarly publications and earlier submissions, detects AI-written passages, and hands you two reports: a Similarity Report with match groups, top sources and highlighted pages, and an AI Writing Report with the likely AI-generated text marked.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#scan">Start a scan</a>
+          <a class="btn" href="#install">Install the app</a>
+        </div>
+      </div>
+      <div class="sheet" aria-label="Example of the Integrity Overview page">
+        <div class="sheet-head"><img src="assets/icons/logo.svg" alt=""><b>turninout</b><span>Page 2 of 90 - Integrity Overview</span><span>Submission ID tio:oid:::1:512708335</span></div>
+        <h2>2%&nbsp; Overall Similarity</h2>
+        <p class="sub">The combined total of all matches, including overlapping sources, for each database.</p>
+        <div class="cols">
+          <div>
+            <h4>Match Groups</h4>
+            <div class="grp"><span class="dot" style="background:#f86370"></span><span><b>75</b> Not Cited or Quoted 2%</span><small>Matches with neither in-text citation nor quotation marks</small></div>
+            <div class="grp"><span class="dot" style="background:#f68f4a"></span><span><b>9</b> Missing Quotations 0%</span><small>Matches that are still very similar to source material</small></div>
+            <div class="grp"><span class="dot" style="background:#f4e4aa"></span><span><b>0</b> Missing Citation 0%</span><small>Matches that have quotation marks, but no in-text citation</small></div>
+            <div class="grp"><span class="dot" style="background:#c1ecdf"></span><span><b>0</b> Cited and Quoted 0%</span><small>Matches with in-text citation present, but no quotation marks</small></div>
+          </div>
+          <div>
+            <h4>Top Sources</h4>
+            <div class="src"><span>1%</span><span>Internet sources</span></div>
+            <div class="src"><span>0%</span><span>Publications</span></div>
+            <div class="src"><span>0%</span><span>Submitted works (Student Papers)</span></div>
+          </div>
+        </div>
+        <div class="ai-row"><strong>27% detected as AI</strong><span>…summarized using <mark>a weighted Gini coefficient, a municipality-specific Theil index</mark> and <span class="pink">the Lorenz curve, and the</span> Palma ratio.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="scan" aria-labelledby="scan-title">
+    <div class="wrap">
+      <h2 id="scan-title">Scan a document</h2>
+      <p class="intro">Add one file or a whole class set. Every file is checked against the internet, publications and the submitted-works repository in this browser, and files uploaded together are also checked against each other.</p>
+      <div id="scanner"></div>
+      <noscript><p>The scanner needs JavaScript.</p></noscript>
+    </div>
+  </section>
+
+  <section class="block" id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <h2 id="how-title">How it works</h2>
+      <p class="intro">The checks follow the method of commercial integrity checkers: fingerprint the text, search the databases, group every match, and score AI writing sentence by sentence.</p>
+      <div class="cards">
+        <div class="card"><span class="n">1</span><h3>Fingerprinting</h3><p>The text is read with its exact position on every page, split into words, sentences and paragraphs, and cut into overlapping five-word fingerprints. Look-alike letters from other alphabets are swapped back first, so they cannot hide a match.</p></div>
+        <div class="card"><span class="n">2</span><h3>Searching the databases</h3><p>Phrases from the paper are searched in Wikipedia, OpenAlex, Crossref, Europe PMC and Semantic Scholar (and, with your key, the whole web through Google Programmable Search). Every earlier submission is searched too.</p></div>
+        <div class="card"><span class="n">3</span><h3>Scoring similarity</h3><p>Overall Similarity is the share of the paper's words matched to any source. Top Sources hands each matched word to the strongest source first, so overlapping sources are not counted twice. The bibliography and quoted text can be filtered out.</p></div>
+        <div class="card"><span class="n">4</span><h3>Detecting AI writing</h3><p>Only qualifying prose counts: headings, lists, tables and the bibliography are left out. Each sentence is scored in overlapping windows of its neighbours from signals such as word predictability, sentence-length burstiness, stock transitions and citation habits. At least 300 words are needed, and scores from 1% to 19% show as *%.</p></div>
+      </div>
+      <div class="two" style="margin-top:24px">
+        <div class="card">
+          <h3>Match groups</h3>
+          <ul class="groups">
+            <li><i style="background:var(--red)"></i><span><b>Not Cited or Quoted</b>: matches with neither in-text citation nor quotation marks.</span></li>
+            <li><i style="background:var(--orange)"></i><span><b>Missing Quotations</b>: cited text so close to the source that it may also need quotation marks.</span></li>
+            <li><i style="background:var(--yellow)"></i><span><b>Missing Citation</b>: text in quotation marks with no in-text citation.</span></li>
+            <li><i style="background:var(--teal)"></i><span><b>Cited and Quoted</b>: matches with both a citation and quotation marks.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Integrity flags</h3>
+          <p><b>Replaced Characters</b>: letters swapped for similar characters from another alphabet. <b>Hidden Text</b>: invisible characters inside words, or text too small to see. A flag is a prompt to look closer, not proof of a problem.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="reports" aria-labelledby="reports-title">
+    <div class="wrap">
+      <h2 id="reports-title">The two reports</h2>
+      <p class="intro">Every scan produces the same two PDFs, page for page, whatever the document.</p>
+      <div class="two">
+        <div>
+          <h3>Similarity Report</h3>
+          <ol class="pages">
+            <li><b>Cover Page</b>: author, title, institution, submission ID and dates, file name and size, pages, words and characters.</li>
+            <li><b>Integrity Overview</b>: Overall Similarity, filters, the four match groups, the share from internet sources, publications and submitted works, and the integrity flags.</li>
+            <li><b>Top Sources</b>: every source, numbered and colour-coded, with its type and share.</li>
+            <li><b>Integrity Submission</b>: every page of the paper with matches highlighted in the source's colour and source numbers in the margin.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>AI Writing Report</h3>
+          <ol class="pages">
+            <li><b>Cover Page</b>: the same document details.</li>
+            <li><b>AI Writing Overview</b>: the percentage detected as AI, the number of AI-generated segments, and the caution and disclaimer.</li>
+            <li><b>AI Writing Submission</b>: every page of the paper with the likely AI-generated text highlighted.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="install" aria-labelledby="install-title">
+    <div class="wrap">
+      <h2 id="install-title">Install the app</h2>
+      <p class="intro">The app is the same scanner in its own window, with your submissions and reports kept on the device. It opens without a connection; searches need one.</p>
+      <div class="buttons" style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px">
+        <button class="btn primary" id="install-btn" type="button" hidden>Install Turn In Out</button>
+        <a class="btn" href="app/">Open the app</a>
+      </div>
+      <div class="cards">
+        <div class="card"><h3>Android</h3><p>Open the app in Chrome, tap the menu, then <b>Install app</b> or <b>Add to Home screen</b>.</p></div>
+        <div class="card"><h3>iPhone and iPad</h3><p>Open the app in Safari, tap <b>Share</b>, then <b>Add to Home Screen</b>.</p></div>
+        <div class="card"><h3>Windows, Mac and Linux</h3><p>Open the app in Chrome or Edge and click the install icon in the address bar.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block alt" id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <h2 id="faq-title">Questions</h2>
+      <details class="faq"><summary>Is my document uploaded anywhere?</summary><p>No. The file is read and the reports are built on your device. Only short phrases from the text are sent as search queries to the databases turned on in Settings. Submissions are kept in this browser's repository, which you can clear at any time.</p></details>
+      <details class="faq"><summary>Which files can I check?</summary><p>PDF, Word (.docx), plain text, Markdown and RTF, or pasted text. Scanned images need text recognition (OCR) first.</p></details>
+      <details class="faq"><summary>Can a teacher check a whole class?</summary><p>Yes. Add every paper at once: each one is checked against the others and against everything submitted before on the same device.</p></details>
+      <details class="faq"><summary>Why can scores differ from other checkers?</summary><p>Each checker searches its own databases. Commercial services index billions of web pages and private student-paper collections that no public database offers, and their AI models are private, so results on the same paper can differ.</p></details>
+      <details class="faq"><summary>What does *% mean in the AI Writing Report?</summary><p>An AI score from 1% to 19% is shown as *% with no highlights, because low scores have a higher chance of false positives.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Turn In Out · De Asis</span>
+    <span>Reports are a starting point for review, not proof of misconduct.</span>
+  </div>
+</footer>
+
+<script src="assets/vendor/pdf.min.js"></script>
+<script src="assets/vendor/pdf-lib.min.js"></script>
+<script src="assets/vendor/fontkit.umd.min.js"></script>
+<script src="assets/vendor/mammoth.browser.min.js"></script>
+<script src="assets/js/wordfreq.js"></script>
+<script src="assets/js/text.js"></script>
+<script src="assets/js/extract.js"></script>
+<script src="assets/js/ai.js"></script>
+<script src="assets/js/similarity.js"></script>
+<script src="assets/js/sources.js"></script>
+<script src="assets/js/report.js"></script>
+<script src="assets/js/ui.js"></script>
+<script src="assets/js/boot.js"></script>
+<script>VT.boot({ base: "", mount: "scanner" });</script>
+</body>
+</html>
