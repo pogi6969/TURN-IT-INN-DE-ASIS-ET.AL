@@ -1,3 +1,19 @@
 tests/node_modules/
 node_modules/
 .DS_Store
+
+# ---- Secrets: never commit these ----
+.env
+.env.*
+!.env.example
+*.env
+secrets.h
+!secrets.example.h
+*.pem
+*.key
+*.p12
+*.keystore
+*.jks
+service-account*.json
+google-services.json
+GoogleService-Info.plist
